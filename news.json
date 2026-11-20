@@ -1,0 +1,72 @@
+{
+"updated": "2026-11-20",
+"alerts": [],
+"issues": [
+{
+"id": "2026-11",
+"title": "2026년 11월호 · 창간호",
+"published": "2026-11-20",
+"headline": "임산물 소득은 ‘재배’가 아니라 ‘가공·판로’에서 갈린다",
+"urgent": [
+{"title": "임업직불금 소득요건 완화", "what": "농업 외 종합소득 제한 3,700만 → 4,700만원", "when": "2026년분부터 (11.13 발표)", "meaning": "직장 소득이 있는 겸업 후계자의 직불금 문턱이 낮아짐. 농촌 외 거주 시 적용되는 기준이라 거주 요건과 함께 판단", "action": "본인 농외 종합소득금액 확인 → 시·군 산림과에 적용 방식 문의", "trust": "gov", "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789135"},
+{"title": "국유품종 통상실시권 4차 공고", "what": "음나무·헛개나무 등 17작물 53품종. 실시료를 내면 국가 보유 품종을 재배·증식·판매 가능", "when": "2026.11.13 공고 · 신청기간은 산림청 공고문 확인", "meaning": "검증된 신품종으로 임산물 사업을 시작할 수 있는 통로", "action": "산림청 누리집 ‘행정정보-공고’에서 품종 목록·실시료 확인", "trust": "gov", "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789147"},
+{"title": "2027 산림청 예산안 3조 1,582억원", "what": "신규 산림보전지불제(1.3만ha), 직불금 단가 인상(+84억), 산림사업종합자금 직접융자 도입", "when": "국회 심의 중 · 12월 확정", "meaning": "직접융자는 산 매입·시설 자금 후보", "action": "12월 확정본에서 3개 사업 유지 여부 확인", "trust": "gov", "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148971142"},
+{"title": "산지관리법령 개정 시행", "what": "산촌체류형 쉼터(본인 소유 산지, 부지 100㎡ 미만·시설 33㎡ 이하), 간이 농림어업용시설 일시사용 최대 10년, 작업로 변경신고 간소화", "when": "2026 하반기", "meaning": "주말 임업의 숙박 거점, 재배시설 설치가 쉬워짐. 재해 우려지역 불가", "action": "후보지 체크리스트에 쉼터·시설 설치 가능 여부 추가", "trust": "press", "url": "https://mobile.newsis.com/view/NISX20260722_0003718334"}
+],
+"radar": [
+{"name": "오미자 재배 → 가공 → 수출", "type": "stable", "region": "국내", "what": "문경 ‘큰들’: 스마트 관수로 연 5톤 생산, 저온추출 오미자청·젤리 개발, 중국·베트남·싱가포르 수출로 연 매출 약 6억원", "how": "원물 재배 2~3년 → 가공품 1~2종(청·분말) → 해외 박람회·수출바우처", "trust": "press", "url": "https://www.hankyung.com/article/202609031272i"},
+{"name": "밤 + 가공품 개발", "type": "stable", "region": "국내", "what": "부여 숲나농원: 밤 재배에 가공품 개발을 더해 부가가치 창출 (2025년 11월 이달의 임업인)", "how": "주산지 작목 선택 → 지역 브랜드·경연대회로 인지도 → 가공품", "trust": "press", "url": "https://www.heraldk.com/article/2025110920263339352"},
+{"name": "국유품종 라이선스 재배", "type": "stable", "region": "국내", "what": "산림청이 보유한 음나무·헛개나무 등 53품종을 실시료를 내고 재배·판매. 올해 27품종 계약", "how": "공고문에서 품종 선택 → 통상실시권 계약 → 묘목 확보", "trust": "gov", "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789147"},
+{"name": "병풀(센텔라) 스마트팜", "type": "novel", "region": "국내", "what": "충주 김종광 대표: 전량 수입하던 화장품·의약 원료를 국내 재배. 2,600㎡ 다단식 수경 스마트팜에서 연 10톤, 건나물·차·비누로 가공해 연 매출 2억원", "how": "수입 대체 원료 작물 찾기 → 시설 재배로 연중 생산 → 화장품 원료·가공품 판로", "trust": "press", "url": "https://www.heraldk.com/article/2026070519382602217"},
+{"name": "산림 × K뷰티·로봇 스타트업", "type": "novel", "region": "국내", "what": "산림청 오픈이노베이션이 피지컬 AI·화장품 등 융복합 분야로 확대", "how": "임산물 원료를 화장품 기업과 연결 → 공동 개발·납품", "trust": "press", "url": "https://www.fnnews.com/news/202609071113536975"},
+{"name": "임산물 생산단지 규모화", "type": "growth", "region": "국내", "what": "노지 1~5억, 시설 1~7억원, 보조율 60%. 2년 이상 재배 중인 임업후계자 대상", "how": "재배 이력 2년 확보 → 매년 상반기 시·군 공모", "trust": "press", "url": "https://www.fnnews.com/news/202506101417461475"},
+{"name": "청년 산림창업 지원", "type": "growth", "region": "국내", "what": "임업진흥원 ‘청년 산림창업 마중물’(창업 7년 이내 기업), 창업캠프·아이디어 챌린지(만 19~39세)", "how": "연령·업력 요건 확인 → 이듬해 2~3월 공고 대비", "trust": "press", "url": "https://www.venturesquare.net/announcement/1038816"},
+{"name": "일본 ‘森業(모리교)’ — 숲 공간 서비스", "type": "growth", "region": "해외", "what": "일본 농림수산성이 ‘森業’을 주요 분야로 지정. 산림욕 등 숲 체험 서비스, 기업 숲 만들기, 산림 J-크레딧 거래로 산주 수익을 만드는 방향", "how": "한국 대응: 산촌체류형 쉼터 + 체험·치유 프로그램, 기업 ESG 숲 조성", "trust": "gov", "url": "https://www.rinya.maff.go.jp/j/kikaku/hakusyo/r7hakusyo_h/all/chap2_3_2.html"},
+{"name": "일본 버섯이 끌어올린 임업 산출액", "type": "stable", "region": "해외", "what": "일본 임업 산출액 2024년 5,713억엔(+2.9%), 재배 버섯 가격 상승이 주요 요인", "how": "표고·목이 등 버섯류는 안정형 소득원 — 통년 재배·고품질 종균이 경쟁력", "trust": "gov", "url": "https://www.rinya.maff.go.jp/j/kikaku/hakusyo/r7hakusyo/attach/pdf/gaiyou-6.pdf"},
+{"name": "일본 아오모리 목이버섯 통년재배·국산 옻", "type": "novel", "region": "해외", "what": "현 차원에서 목이버섯 통년 재배, 국산 옻 공급, 폐원 과수원 활용 등 특용임산물 진흥", "how": "국내 옻·목이 수요처(공예·식품)와 연결 가능성 검토", "trust": "gov", "url": "https://www.pref.aomori.lg.jp/soshiki/nourin/nosui/files/44sansonsinkou26.pdf"},
+{"name": "미국식 Forest Farming", "type": "growth", "region": "해외", "what": "숲을 베지 않고 숲 아래에서 버섯·약용식물 등 고부가 작물을 기르는 혼농임업 방식", "how": "산양삼·산마늘·더덕 등 임간재배가 한국판 모델", "trust": "est", "url": "https://www.hobbyfarms.com/?p=55007"}
+],
+"programs": [
+{"title": "임업진흥원 ‘우리숲더하기 플러스’", "body": "기관의 배출량 산정부터 산림탄소크레딧 구매·소각까지 원스톱 지원. 국내 산림탄소상쇄제도 인증 크레딧 사용 → 산주 크레딧의 수요처.", "trust": "press", "url": "https://twig24.com/news/2026/09/30/20260930500199"},
+{"title": "기업림 최초 산림OECM 등록 추진", "body": "산림청·SK임업 협약(11.17). 2027년 OECM 제도 신규 도입(3.3만ha), 산림보전지불제와 함께 볼 것.", "trust": "gov", "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789616"}
+],
+"global": [
+{"trend": "EU 산림전용방지법(EUDR)", "detail": "대·중기업 2026.12.30, 소·영세 2027.6.30 시행. 5월 간소화 검토에서 추가 연기 없음", "korea": "추적성 있는 국산 임산물·목재 프리미엄 요인", "trust": "gov", "url": "https://environment.ec.europa.eu/news/commission-updates-product-scope-and-tools-support-eudr-2026-07-13_en"},
+{"trend": "EFI·FAO 비목재 임산물 보고서", "detail": "유럽 비목재 임산물(NWFP)의 사람·자연·녹색경제 가치와 정책 우선순위 제안", "korea": "임산물을 바이오경제 산업으로 보는 흐름", "trust": "press", "url": "https://eustafor.eu/new-report-on-non-wood-forest-products-for-people-nature-and-the-green-economy/"},
+{"trend": "일본 산림 J-크레딧", "detail": "GX-ETS 2026.4 의무 단계, 의무량의 최대 10% 상쇄. 산림 J-크레딧 5,300엔/톤(4월)", "korea": "소규모 산주는 공동·묶음 사업이 현실적", "trust": "press", "url": "https://www.spglobal.com/energy/en/news-research/latest-news/energy-transition/040826-japans-gx-ets-mandatory-phase-begins-demand-muted-as-companies-await-allocation-clarity"}
+],
+"watch": [
+{"title": "산림보전지불제", "status": "2027 예산안 신규 · 세부 지침 대기"},
+{"title": "자발적 탄소시장법 + KRX 탄소크레딧 거래소", "status": "법 제정 추진, KRX 글로벌 평가사 MOU(10월)"},
+{"title": "탄소크레딧 소득 비과세 법안", "status": "농업 대상 발의(10월) · 임업 확대 여부 추적"},
+{"title": "국유품종 통상실시권", "status": "연 4회 공고 · 2027년 1차 공고 대기"}
+],
+"todo": [
+"국유품종 공고문에서 음나무·헛개 등 품종 목록과 실시료 확인",
+"본인 농외 종합소득금액 확인 → 4,700만원 기준으로 직불금 가능 여부 판단",
+"관심 작목 3개를 ‘안정형 1 + 신박형 1 + 숲공간형 1’로 골라 후보지 조건에 반영"
+],
+"sources": [
+{"t": "산림청, 임업직불금 소득요건 4,700만원 상향 (2026.11.13)", "u": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789135"},
+{"t": "산림청, 국유품종 통상실시권 4차 공고 (2026.11.13)", "u": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789147"},
+{"t": "산림청, 2027년 예산안", "u": "https://www.korea.kr/news/policyNewsView.do?newsId=148971142"},
+{"t": "뉴시스, 산지관리법령 개정 하반기 시행", "u": "https://mobile.newsis.com/view/NISX20260722_0003718334"},
+{"t": "한국경제, 9월 이달의 임업인(문경 오미자)", "u": "https://www.hankyung.com/article/202609031272i"},
+{"t": "헤럴드경제, 7월 이달의 임업인(충주 병풀)", "u": "https://www.heraldk.com/article/2026070519382602217"},
+{"t": "헤럴드경제, 2025년 11월 이달의 임업인(부여 밤)", "u": "https://www.heraldk.com/article/2025110920263339352"},
+{"t": "파이낸셜뉴스, 산림분야 오픈이노베이션 확대", "u": "https://www.fnnews.com/news/202609071113536975"},
+{"t": "강원도 2026 산림소득사업 공모", "u": "https://www.fnnews.com/news/202506101417461475"},
+{"t": "임업진흥원, 청년 산림창업 마중물 공고", "u": "https://www.venturesquare.net/announcement/1038816"},
+{"t": "일본 임야청 백서, 산촌 활성화(森業)", "u": "https://www.rinya.maff.go.jp/j/kikaku/hakusyo/r7hakusyo_h/all/chap2_3_2.html"},
+{"t": "일본 임야청 백서 개요, 임업 산출액", "u": "https://www.rinya.maff.go.jp/j/kikaku/hakusyo/r7hakusyo/attach/pdf/gaiyou-6.pdf"},
+{"t": "아오모리현 산촌 진흥 프로젝트", "u": "https://www.pref.aomori.lg.jp/soshiki/nourin/nosui/files/44sansonsinkou26.pdf"},
+{"t": "Hobby Farms, Non-Timber Forest Products", "u": "https://www.hobbyfarms.com/?p=55007"},
+{"t": "임업진흥원 우리숲더하기 플러스", "u": "https://twig24.com/news/2026/09/30/20260930500199"},
+{"t": "산림청·SK임업 산림OECM 협약", "u": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789616"},
+{"t": "EU 집행위, EUDR 적용일·범위", "u": "https://environment.ec.europa.eu/news/commission-updates-product-scope-and-tools-support-eudr-2026-07-13_en"},
+{"t": "EUSTAFOR, EFI·FAO 비목재 임산물 보고서", "u": "https://eustafor.eu/new-report-on-non-wood-forest-products-for-people-nature-and-the-green-economy/"},
+{"t": "S&P Global, 일본 GX-ETS·J-크레딧", "u": "https://www.spglobal.com/energy/en/news-research/latest-news/energy-transition/040826-japans-gx-ets-mandatory-phase-begins-demand-muted-as-companies-await-allocation-clarity"}
+]
+}
+]
+}

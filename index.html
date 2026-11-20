@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Forester 임업 월보</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 산주의 현장 수첩 — 차분하고 실무적, 할 일이 먼저 보이게
+   IDEA: 임산물 사업 레이더. 안정형·성장형·신박형을 한눈에 골라본다
+   PICTURE: 유형별 색으로 구분된 사업 카드 레이더(필터 칩)
+   COLOUR and TYPE: 깊은 숲 녹색 바탕, 이끼색 보조, 주홍 강조(긴급) / IBM Plex Sans KR + Noto Sans KR
+   LAYOUT: 녹색 헤더 밴드(호 선택·헤드라인·긴급) → 사업 레이더 → 할 일 → 지원사업 → 해외 → 워치리스트 → 출처 */
+:root{color-scheme:light dark;--bg:light-dark(#f6f7f2,#0f1712);--card:light-dark(#fff,#16211a);--ink:light-dark(#14231a,#e6eee7);--mut:light-dark(#566358,#9fb0a3);--line:light-dark(#dfe5dc,#26352b);--forest:#1e4a32;--moss:#7fae6a;--hot:#e2552f}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Noto Sans KR",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"IBM Plex Sans KR","Noto Sans KR",sans-serif;line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(22px,3vw,30px);margin-bottom:16px}
+h3{font-size:17px}
+a{color:inherit}
+.band{padding:clamp(24px,4vw,56px) max(5vw,16px)}
+.wrap{max-width:1180px;margin:0 auto}
+.top{background:var(--forest);color:#eef5ef}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:22px}
+.brand{font:700 15px "IBM Plex Sans KR",sans-serif;opacity:.85}
+select{font:16px "Noto Sans KR",sans-serif;min-height:44px;padding:0 12px;border-radius:10px;border:1px solid #ffffff55;background:#ffffff14;color:#fff}
+select option{color:#111}
+select:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--moss);outline-offset:2px}
+.top h1{font-size:clamp(28px,4.4vw,46px);max-width:24ch}
+.meta{margin:12px 0 0;color:#c9dccd;font-size:14px}
+.alert{background:var(--hot);color:#fff;border-radius:12px;padding:14px 16px;margin-top:20px}
+.alert b{display:block}
+.urg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px;margin-top:26px}
+.u{background:#ffffff10;border:1px solid #ffffff26;border-radius:14px;padding:16px}
+.u h3{color:#fff;margin-bottom:6px}
+.u p{margin:4px 0;font-size:15px;color:#dbe8de}
+.u .act{color:#fff;font-weight:500}
+.u .act::before{content:"할 일 → ";color:#ffb59f}
+.when{display:inline-block;font-size:13px;background:var(--hot);color:#fff;border-radius:99px;padding:2px 10px;margin-bottom:8px;white-space:nowrap}
+.tr{font-size:13px;white-space:nowrap}
+.tr[data-t=gov]::before{content:"● ";color:#5cc06b}.tr[data-t=press]::before{content:"● ";color:#e8c445}.tr[data-t=est]::before{content:"● ";color:#aaa}
+.u .tr{color:#c9dccd}
+.small{font-size:14px;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{font:500 15px "Noto Sans KR",sans-serif;min-height:44px;padding:0 16px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--forest);color:#fff;border-color:var(--forest)}
+.chip .n{opacity:.7;margin-left:4px}
+.rad{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:14px}
+.r{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;border-top:6px solid var(--k)}
+.r[data-k=stable]{--k:#5d9a4c}.r[data-k=growth]{--k:#3f8fb0}.r[data-k=novel]{--k:var(--hot)}
+.r p{margin:8px 0}
+.tag{display:inline-block;font-size:13px;border-radius:99px;padding:2px 10px;margin:0 6px 8px 0;background:light-dark(#eef2ec,#1f2c23);white-space:nowrap}
+.tag.k{background:var(--k);color:#fff}
+.how{font-size:15px}.how::before{content:"실행 → ";font-weight:700;color:var(--k)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:14px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.c p{margin:8px 0}
+.todo{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.todo label{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:44px;cursor:pointer}
+.todo input{width:20px;height:20px;margin-top:3px;accent-color:var(--forest);flex:none}
+.todo input:checked+span{text-decoration:line-through;color:var(--mut)}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:14px;overflow:hidden}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-size:15px}
+th{font-size:13px;color:var(--mut);font-weight:500}
+.tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:3px solid var(--moss);display:grid;gap:14px}
+.tl li{position:relative}.tl li::before{content:"";position:absolute;left:-26px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:3px solid var(--moss)}
+.src{columns:2 320px;padding-left:18px;font-size:14px}.src li{break-inside:avoid;margin-bottom:6px}
+.empty{padding:40px;text-align:center;color:var(--mut)}
+.alt{background:light-dark(#eaf0e5,#121c15)}
+footer{font-size:13px;color:var(--mut)}
+@media(max-width:760px){.ring{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 14px;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;white-space:normal;color:var(--mut);font-size:12px}.stack td:empty{display:none}}
+@media(prefers-reduced-motion:no-preference){.arc{transition:stroke-dasharray 1s ease}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+<header class="band top"><div class="wrap">
+  <div class="bar"><span class="brand">Forester 임업 월보</span><label><span class="small" style="color:#c9dccd">호 선택 </span><select id="pick" aria-label="호 선택"></select></label></div>
+  <h1 id="hl">불러오는 중…</h1>
+  <p class="meta" id="meta"></p>
+  <div id="alerts"></div>
+  <div class="urg" id="urg"></div>
+</div></header>
+
+<section class="band"><div class="wrap">
+  <h2>임산물·임업 사업 레이더</h2>
+  <div class="chips" id="chips" role="group" aria-label="사업 유형 필터"></div>
+  <div class="rad" id="rad"></div>
+</div></section>
+
+<section class="band alt"><div class="wrap">
+  <h2>이번 달 할 일</h2>
+  <ul class="todo" id="todo"></ul>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>활용할 지원사업</h2>
+  <div class="cards" id="prog"></div>
+</div></section>
+
+<section class="band alt"><div class="wrap">
+  <h2>해외 선진 트렌드</h2>
+  <table class="stack"><thead><tr><th>트렌드</th><th>내용</th><th>한국 시사점</th><th>신뢰도</th></tr></thead><tbody id="glob"></tbody></table>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>국내 도입 예정 워치리스트</h2>
+  <ul class="tl" id="watch"></ul>
+</div></section>
+
+<section class="band alt"><div class="wrap">
+  <h2>참고 자료</h2>
+  <ol class="src" id="src"></ol>
+  <footer><p>● 초록 정부·법령 원문 · ● 노랑 언론·기관 보도 · ● 회색 추정. 정보 제공용이며 세무·법률 자문이 아닙니다. 요건은 시·군 산림과와 산림조합에서 최종 확인하세요.</p><p id="upd"></p></footer>
+</div></section>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const TR={gov:'정부 원문',press:'언론·기관',est:'추정'};
+const tr=t=>`<span class="tr" data-t="${esc(t)}">${TR[t]||''}</span>`;
+const link=(u,txt)=>u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(txt)}</a>`:esc(txt);
+const KIND={stable:'안정형',growth:'성장형',novel:'신박형'};
+const FILTERS=[['all','전체'],['stable','안정형'],['growth','성장형'],['novel','신박형'],['국내','국내'],['해외','해외']];
+let DATA=null, CUR=null, FIL='all';
+const store={get(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+function radar(){
+  const list=CUR.radar||[];
+  const hit=x=>FIL==='all'||x.type===FIL||x.region===FIL;
+  $('chips').innerHTML=FILTERS.map(([k,l])=>{const n=list.filter(x=>k==='all'||x.type===k||x.region===k).length;return n?`<button class="chip" data-f="${k}" aria-pressed="${FIL===k}">${l}<span class="n">${n}</span></button>`:''}).join('');
+  const show=list.filter(hit);
+  $('rad').innerHTML=show.length?show.map(x=>`<article class="r" data-k="${esc(x.type)}"><span class="tag k">${KIND[x.type]||''}</span><span class="tag">${esc(x.region)}</span><h3>${link(x.url,x.name)}</h3><p>${esc(x.what)}</p><p class="how">${esc(x.how)}</p>${tr(x.trust)}</article>`).join(''):'<p class="empty">이 조건의 사업이 이번 호에는 없습니다.</p>';
+}
+
+function render(id){
+  const d=DATA.issues.find(x=>x.id===id)||DATA.issues[0];
+  if(!d){$('hl').textContent='아직 발행된 호가 없습니다';return}
+  $('hl').textContent=d.headline;
+  $('meta').textContent=`${d.title} · 발행 ${d.published}`;
+  $('urg').innerHTML=(d.urgent||[]).map(u=>`<article class="u"><span class="when">${esc(u.when)}</span><h3>${link(u.url,u.title)}</h3><p>${esc(u.what)}</p><p>${esc(u.meaning)}</p><p class="act">${esc(u.action)}</p>${tr(u.trust)}</article>`).join('');
+  CUR=d;FIL='all';radar();
+  const key='todo-'+d.id, done=store.get(key)||{};
+  $('todo').innerHTML=(d.todo||[]).map((t,i)=>`<li><label><input type="checkbox" data-i="${i}" ${done[i]?'checked':''}><span>${esc(t)}</span></label></li>`).join('');
+  $('todo').onchange=e=>{const i=e.target.dataset.i;if(i==null)return;done[i]=e.target.checked;store.set(key,done)};
+  $('prog').innerHTML=(d.programs||[]).map(p=>`<article class="c"><h3>${link(p.url,p.title)}</h3><p>${esc(p.body)}</p>${tr(p.trust)}</article>`).join('');
+  $('glob').innerHTML=(d.global||[]).map(g=>`<tr><td><b>${link(g.url,g.trend)}</b></td><td>${esc(g.detail)}</td><td>${esc(g.korea)}</td><td>${tr(g.trust)}</td></tr>`).join('');
+  $('watch').innerHTML=(d.watch||[]).map(w=>`<li><b>${esc(w.title)}</b><br><span class="small">${esc(w.status)}</span></li>`).join('');
+  $('src').innerHTML=(d.sources||[]).map(s=>`<li>${link(s.u,s.t)}</li>`).join('');
+  store.set('issue',d.id);
+}
+
+function alerts(){
+  const a=(DATA.alerts||[]).slice().sort((x,y)=>String(y.date).localeCompare(String(x.date))).slice(0,3);
+  $('alerts').innerHTML=a.map(x=>`<div class="alert"><b>🚨 ${esc(x.date)} · ${link(x.url,x.title)}</b>${esc(x.what||'')}${x.action?` — ${esc(x.action)}`:''}</div>`).join('');
+}
+
+fetch('news.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
+  DATA=j;DATA.issues.sort((a,b)=>b.id.localeCompare(a.id));
+  $('pick').innerHTML=DATA.issues.map(i=>`<option value="${esc(i.id)}">${esc(i.title)}</option>`).join('');
+  const saved=store.get('issue');const start=DATA.issues[0]?.id;
+  $('pick').value=start;render(start);alerts();
+  $('upd').textContent='최종 갱신 '+(DATA.updated||'');
+  $('pick').onchange=e=>render(e.target.value);
+  $('chips').onclick=e=>{const b=e.target.closest('[data-f]');if(!b)return;FIL=b.dataset.f;radar()};
+}).catch(()=>{$('hl').textContent='소식을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.'});
+}
+</script>
+</body>
+</html>

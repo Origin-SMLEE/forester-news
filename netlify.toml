@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/news.json"
+  [headers.values]
+    Cache-Control = "no-cache"
