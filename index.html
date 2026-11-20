@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Forester 임업 월보</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1e4a32">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="임업월보">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -27,6 +34,8 @@ a{color:inherit}
 .brand{font:700 15px "IBM Plex Sans KR",sans-serif;opacity:.85}
 select{font:16px "Noto Sans KR",sans-serif;min-height:44px;padding:0 12px;border-radius:10px;border:1px solid #ffffff55;background:#ffffff14;color:#fff}
 select option{color:#111}
+.inst{font:500 15px "Noto Sans KR",sans-serif;min-height:44px;padding:0 16px;border-radius:10px;border:0;background:var(--hot);color:#fff;cursor:pointer}
+.inst[hidden]{display:none}
 select:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--moss);outline-offset:2px}
 .top h1{font-size:clamp(28px,4.4vw,46px);max-width:24ch}
 .meta{margin:12px 0 0;color:#c9dccd;font-size:14px}
@@ -78,7 +87,7 @@ footer{font-size:13px;color:var(--mut)}
 </head>
 <body>
 <header class="band top"><div class="wrap">
-  <div class="bar"><span class="brand">Forester 임업 월보</span><label><span class="small" style="color:#c9dccd">호 선택 </span><select id="pick" aria-label="호 선택"></select></label></div>
+  <div class="bar"><span class="brand">Forester 임업 월보</span><button id="install" class="inst" hidden>앱으로 설치</button><label><span class="small" style="color:#c9dccd">호 선택 </span><select id="pick" aria-label="호 선택"></select></label></div>
   <h1 id="hl">불러오는 중…</h1>
   <p class="meta" id="meta"></p>
   <div id="alerts"></div>
@@ -168,6 +177,11 @@ fetch('news.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
   $('pick').onchange=e=>render(e.target.value);
   $('chips').onclick=e=>{const b=e.target.closest('[data-f]');if(!b)return;FIL=b.dataset.f;radar()};
 }).catch(()=>{$('hl').textContent='소식을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.'});
+try{if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}
+let deferred=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;$('install').hidden=false});
+$('install').onclick=async()=>{if(!deferred)return;deferred.prompt();try{await deferred.userChoice}catch(e){}deferred=null;$('install').hidden=true};
+window.addEventListener('appinstalled',()=>{$('install').hidden=true});
 }
 </script>
 </body>
