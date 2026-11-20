@@ -3,6 +3,239 @@
  "alerts": [],
  "issues": [
   {
+   "id": "2026-11b",
+   "title": "2026년 11월 2호",
+   "published": "2026-11-21",
+   "headline": "숲은 ‘팔 물건’만이 아니라 ‘팔 경험’도 만든다 — 공급 줄어든 임산물과 커지는 숲 서비스",
+   "urgent": [
+    {
+     "title": "산림복지진흥법 시행령 개정",
+     "what": "산림복지전문업·서비스제공자 등록취소 기준을 현실에 맞게 완화, 산림복지단지 조성 절차 간소화",
+     "when": "법 2026.5.12 공포 · 시행령 입법예고 8.27~10.7",
+     "meaning": "숲해설·산림치유 같은 숲 서비스 사업의 진입·유지 부담이 줄어듦",
+     "action": "산림복지전문업 등록 요건(인력·자격) 확인",
+     "trust": "gov",
+     "url": "https://opinion.lawmaking.go.kr/gcom/ogLmPp/88248?isOgYn=Y&pageIndex=8"
+    },
+    {
+     "title": "2027 산림청 예산 국회 확정 임박",
+     "what": "직불금 단가 인상·산림보전지불제 신규·종합자금 직접융자 등 유지 여부",
+     "when": "12월 국회 의결",
+     "meaning": "내년 지원사업 규모가 정해짐",
+     "action": "12월 확정 발표 후 3개 사업 확인 (긴급 감시로 알림 예정)",
+     "trust": "gov",
+     "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148971142"
+    }
+   ],
+   "radar": [
+    {
+     "name": "표고버섯 — 재배량 감소, 공급 축소",
+     "type": "stable",
+     "region": "국내",
+     "what": "2026년 8월 표고목·톱밥배지 재배량이 전년 대비 각각 5.1%, 6.3% 감소(한국농촌경제연구원 임업관측)",
+     "how": "공급이 줄 때 진입하면 판로 확보가 쉬움 → 톱밥배지 시설재배로 연중 출하, 매월 4일 임업관측으로 가격 확인",
+     "trust": "gov",
+     "url": "https://www.krei.re.kr/attach/observ/2026/09/04/f04b725b-2d41-4cb5-a7a5-102cf9911f42.pdf"
+    },
+    {
+     "name": "오미자 — 냉해·폭염으로 생산 감소, 가격 견조",
+     "type": "stable",
+     "region": "국내",
+     "what": "개화기 냉해·여름 폭염으로 올해 생산량 감소 전망. 1~8월 건오미자 소비지가격 kg당 54,859원으로 평년 대비 9.7% 높음",
+     "how": "기후 리스크 대비(방상·차광 시설)가 곧 경쟁력 → 가공품(청·분말)으로 가격 변동 흡수",
+     "trust": "gov",
+     "url": "https://www.krei.re.kr/attach/observ/2026/09/04/892c5ab6-0d8a-4998-ae24-a3cb481ae75d.pdf"
+    },
+    {
+     "name": "산림복지전문업 (숲해설·숲체험·산림치유)",
+     "type": "growth",
+     "region": "국내",
+     "what": "경기도에만 등록 업체 약 175곳, 이 중 28곳이 산림복지진흥원 ‘취약계층 숲체험·교육 지원사업’에 선정. 진흥원은 예비창업패키지(FOR:SEED)도 운영",
+     "how": "산림치유지도사 자격(양성과정 1급 130시간·2급 158시간) → 산림복지전문업 등록 → 진흥원 지원사업·바우처 수주. 본인 산 + 산촌체류형 쉼터와 결합 가능",
+     "trust": "press",
+     "url": "https://kgnews.co.kr/news/article.html?no=906298"
+    },
+    {
+     "name": "산림치유 × 정신건강 프로그램",
+     "type": "novel",
+     "region": "국내",
+     "what": "국립산림과학원이 동대문구 정신건강복지센터와 중장년 남성 대상 시범 운영 — 참여자 63.6%가 대인관계·정서적 활력 개선",
+     "how": "지자체 정신건강·보건 기관과 연계한 B2G 프로그램 → 숲 공간을 ‘치유 서비스’로 판매",
+     "trust": "gov",
+     "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789671"
+    },
+    {
+     "name": "숲 휴양 수요 — 국민 83.4%가 경험",
+     "type": "stable",
+     "region": "국내",
+     "what": "산림청 2025년 산림휴양복지활동 조사: 국민 83.4%가 경험, 만족도 89.6% 이상, 91.0%가 삶에 긍정적 영향",
+     "how": "수요는 검증됨 → 소규모 숲 체험·캠핑·임산물 수확 체험을 임산물 판매와 묶기",
+     "trust": "gov",
+     "url": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789713"
+    },
+    {
+     "name": "중국 林下经济 — 숲 아래 경제",
+     "type": "growth",
+     "region": "해외",
+     "what": "중국 林下经济 연간 산출 1.3조 위안 이상, 이용 임지 6억여 무, 종사자 3,400만 명. 다만 다수가 단순 재배·1차 가공에 머문다는 지적",
+     "how": "한국판: 산양삼·더덕·약용작물 임간재배 + 가공으로 차별화",
+     "trust": "press",
+     "url": "https://finance.eastmoney.com/a/202605183739810287.html"
+    },
+    {
+     "name": "중국 푸젠 — 향토음식 원료 임간재배·임하공간 경영권",
+     "type": "novel",
+     "region": "해외",
+     "what": "산밍시 농가가 300여 무 임지에 지역 명물 음식(沙县小吃) 원료(황정 등)를 심어 연 15~16만 위안 증수. 장러현은 ‘임하공간 경영권증’으로 숲 아래 공간을 담보·유통 가능한 자산화",
+     "how": "한국 지역 향토음식·식품기업이 쓰는 원료 임산물을 계약재배로 공급",
+     "trust": "press",
+     "url": "https://www.yzwb.net/news/yw/202605/t20260507_350296.html"
+    },
+    {
+     "name": "중국 황정 ‘72변’ — 원물에서 30여 종 가공품",
+     "type": "novel",
+     "region": "해외",
+     "what": "푸젠 사오우에서 제약원료로만 팔던 황정을 30여 종 식품으로 가공해 부가가치 약 10배",
+     "how": "원물 1종 → 가공품 다품종(차·간식·음료) 포트폴리오",
+     "trust": "press",
+     "url": "https://china.huanqiu.com/article/4RTB1dA5pJm"
+    },
+    {
+     "name": "북미 메이플 시럽 — 꾸준한 성장",
+     "type": "growth",
+     "region": "해외",
+     "what": "미국 메이플 생산 약 600만 갤런·1,700만 탭으로 장기 성장 지속. 단, 첨가당 섭취 감소 권고가 수요 변수",
+     "how": "한국판: 고로쇠 수액 — 생수액 판매를 넘어 농축·시럽 등 가공품 검토",
+     "trust": "press",
+     "url": "https://www.farmcrediteast.com/en/resources/todays-harvest-Blog/260210MapleIndustryKeyTrends"
+    },
+    {
+     "name": "퀘벡 ‘메이플 2.0’ — 숲 센서 자동화",
+     "type": "novel",
+     "region": "해외",
+     "what": "수액 라인에 센서·카메라를 달아 누수·온도·펌프 이상을 실시간 감시하며 생산·수익 확대",
+     "how": "겸업 임업인에게 유효: 원격 모니터링(관수·온습도·도난)으로 주말 관리 부담 축소",
+     "trust": "press",
+     "url": "https://lethbridgeherald.com/?p=1228273"
+    }
+   ],
+   "programs": [
+    {
+     "title": "녹색자금 공모 (산림복지 창업자 지원 확대)",
+     "body": "2026년도 녹색자금 350억원·253개 사업 선정. 청년 및 산림복지전문업 창업자 지원을 확대. 매년 하반기 다음 연도 공모.",
+     "trust": "press",
+     "url": "https://www.heraldk.com/article/2025102219533730718"
+    },
+    {
+     "title": "민간 산림복지 창업 아카데미 · FOR:SEED",
+     "body": "한국산림복지진흥원이 창업 아카데미(연 2회 이상)와 예비창업패키지 FOR:SEED를 운영. 산림복지 분야 사업화 연계.",
+     "trust": "press",
+     "url": "https://www.kukinews.com/article/view/kuk202606230091"
+    }
+   ],
+   "global": [
+    {
+     "trend": "중국 ‘林下经济 발전 촉진 조치’",
+     "detail": "2025년 12월 국가임초국 발표 — 생태 기능과 양립, 숲 아래 공간 복합 이용, ‘임업 표준지’ 모델, 금융 지원 혁신",
+     "korea": "임간재배를 산업으로 키우는 정책 패키지의 참고 모델",
+     "trust": "gov",
+     "url": "https://www.gov.cn/zhengce/202604/content_7064364.htm"
+    },
+    {
+     "trend": "북미 메이플 업계 2026 전망",
+     "detail": "공급 확대, 판매 채널 변화, 비용 압박, 관세 불확실성",
+     "korea": "단일 원물 의존 리스크 — 직판·가공 채널 분산 필요",
+     "trust": "press",
+     "url": "https://www.farmcrediteast.com/en/resources/todays-harvest-Blog/260210MapleIndustryKeyTrends"
+    }
+   ],
+   "watch": [
+    {
+     "title": "2027 산림청 예산",
+     "status": "12월 국회 의결 대기"
+    },
+    {
+     "title": "산림복지진흥법 시행령",
+     "status": "입법예고 종료(10.7) · 공포·시행 대기"
+    },
+    {
+     "title": "국유품종 통상실시권",
+     "status": "2027년 1차 공고 대기"
+    },
+    {
+     "title": "표고·밤 임업관측 12월호",
+     "status": "12월 4일 발표 예정"
+    }
+   ],
+   "todo": [
+    "한국농촌경제연구원 임업관측(매월 4일)에서 관심 작목 2개 가격 흐름 구독",
+    "산림치유지도사·산림복지전문업 요건을 확인해 ‘숲 서비스’ 병행 가능성 검토",
+    "관심 작목을 가공품 3종 이상으로 확장할 수 있는지 아이디어 정리 (황정 사례 참고)"
+   ],
+   "sources": [
+    {
+     "t": "국민참여입법센터, 산림복지진흥법 시행령 개정안 입법예고",
+     "u": "https://opinion.lawmaking.go.kr/gcom/ogLmPp/88248?isOgYn=Y&pageIndex=8"
+    },
+    {
+     "t": "산림청, 2027년 예산안",
+     "u": "https://www.korea.kr/news/policyNewsView.do?newsId=148971142"
+    },
+    {
+     "t": "한국농촌경제연구원, 임업관측(표고버섯) 2026년 9월",
+     "u": "https://www.krei.re.kr/attach/observ/2026/09/04/f04b725b-2d41-4cb5-a7a5-102cf9911f42.pdf"
+    },
+    {
+     "t": "한국농촌경제연구원, 임업관측(오미자) 2026년 9월",
+     "u": "https://www.krei.re.kr/attach/observ/2026/09/04/892c5ab6-0d8a-4998-ae24-a3cb481ae75d.pdf"
+    },
+    {
+     "t": "경기신문, 도내 산림복지전문업체 현황",
+     "u": "https://kgnews.co.kr/news/article.html?no=906298"
+    },
+    {
+     "t": "산림청, 산림치유로 중장년 남성 사회적 고립 해소 효과 (11.17)",
+     "u": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789671"
+    },
+    {
+     "t": "산림청, 2025년 산림휴양복지활동 조사결과 (11.18)",
+     "u": "https://m.korea.kr/briefing/pressReleaseView.do?newsId=156789713"
+    },
+    {
+     "t": "경제일보(东方财富), 林下经济要大还要强",
+     "u": "https://finance.eastmoney.com/a/202605183739810287.html"
+    },
+    {
+     "t": "중국신문망, 푸젠 산밍 林下经济",
+     "u": "https://www.yzwb.net/news/yw/202605/t20260507_350296.html"
+    },
+    {
+     "t": "환구망, 林下经济 혁신 사례",
+     "u": "https://china.huanqiu.com/article/4RTB1dA5pJm"
+    },
+    {
+     "t": "중국 정부망, 森林生态和林下经济 정책문답",
+     "u": "https://www.gov.cn/zhengce/202604/content_7064364.htm"
+    },
+    {
+     "t": "Farm Credit East, Maple Industry Outlook 2026",
+     "u": "https://www.farmcrediteast.com/en/resources/todays-harvest-Blog/260210MapleIndustryKeyTrends"
+    },
+    {
+     "t": "Lethbridge Herald, Maple 2.0 Quebec",
+     "u": "https://lethbridgeherald.com/?p=1228273"
+    },
+    {
+     "t": "헤럴드경제, 2026년도 녹색자금 선정 결과",
+     "u": "https://www.heraldk.com/article/2025102219533730718"
+    },
+    {
+     "t": "쿠키뉴스, 산림복지진흥원 창업 지원 확대",
+     "u": "https://www.kukinews.com/article/view/kuk202606230091"
+    }
+   ]
+  },
+  {
    "id": "2026-11",
    "title": "2026년 11월호 · 창간호",
    "published": "2026-11-20",
