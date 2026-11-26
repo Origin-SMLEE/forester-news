@@ -1,6 +1,6 @@
 // Forester 임업 월보 — service worker
 // news.json은 항상 네트워크 우선(최신 소식), 실패 시 캐시. 나머지 앱 파일은 캐시 후 백그라운드 갱신.
-const CACHE = 'forester-v1';
+const CACHE = 'forester-v2';
 const SHELL = ['/', '/index.html', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png'];
 
 self.addEventListener('install', e => {
@@ -17,6 +17,17 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== location.origin) return;
+  if (url.pathname.startsWith('/api/')) return; // 조회수 등 API는 캐시하지 않음
+
+  // 페이지 자체는 네트워크 우선 → 앱이 바뀌면 바로 반영, 오프라인이면 캐시
+  if (e.request.mode === 'navigate') {
+    e.respondWith(
+      fetch(e.request)
+        .then(r => { const copy = r.clone(); caches.open(CACHE).then(c => c.put('/', copy)); return r; })
+        .catch(() => caches.match('/'))
+    );
+    return;
+  }
 
   if (url.pathname.endsWith('/news.json')) {
     e.respondWith(

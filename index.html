@@ -32,6 +32,8 @@ a{color:inherit}
 .top{background:var(--forest);color:#eef5ef}
 .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:22px}
 .brand{font:700 15px "IBM Plex Sans KR",sans-serif;opacity:.85}
+.views{display:block;font:400 13px "Noto Sans KR",sans-serif;color:#c9dccd;margin-top:2px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.views[hidden]{display:none}
 select{font:16px "Noto Sans KR",sans-serif;min-height:44px;padding:0 12px;border-radius:10px;border:1px solid #ffffff55;background:#ffffff14;color:#fff}
 select option{color:#111}
 .inst{font:500 15px "Noto Sans KR",sans-serif;min-height:44px;padding:0 16px;border-radius:10px;border:0;background:var(--hot);color:#fff;cursor:pointer}
@@ -87,7 +89,7 @@ footer{font-size:13px;color:var(--mut)}
 </head>
 <body>
 <header class="band top"><div class="wrap">
-  <div class="bar"><span class="brand">Forester 임업 월보</span><button id="install" class="inst" hidden>앱으로 설치</button><label><span class="small" style="color:#c9dccd">호 선택 </span><select id="pick" aria-label="호 선택"></select></label></div>
+  <div class="bar"><span class="brand">Forester 임업 월보<span class="views" id="views" hidden></span></span><button id="install" class="inst" hidden>앱으로 설치</button><label><span class="small" style="color:#c9dccd">호 선택 </span><select id="pick" aria-label="호 선택"></select></label></div>
   <h1 id="hl">불러오는 중…</h1>
   <p class="meta" id="meta"></p>
   <div id="alerts"></div>
@@ -178,6 +180,15 @@ fetch('news.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{
   $('chips').onclick=e=>{const b=e.target.closest('[data-f]');if(!b)return;FIL=b.dataset.f;radar()};
 }).catch(()=>{$('hl').textContent='소식을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.'});
 try{if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}
+{
+  let counted=false;try{counted=sessionStorage.getItem('fv-counted')==='1'}catch(e){}
+  const fmt=n=>Number(n||0).toLocaleString('ko-KR');
+  fetch('/api/views',{method:counted?'GET':'POST',cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(v=>{
+    if(typeof v.total!=='number')return;
+    try{sessionStorage.setItem('fv-counted','1')}catch(e){}
+    $('views').textContent=`조회 오늘 ${fmt(v.today)} · 누적 ${fmt(v.total)}`;$('views').hidden=false;
+  }).catch(()=>{});
+}
 let deferred=null;
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;$('install').hidden=false});
 $('install').onclick=async()=>{if(!deferred)return;deferred.prompt();try{await deferred.userChoice}catch(e){}deferred=null;$('install').hidden=true};

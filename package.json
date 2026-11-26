@@ -1,0 +1,11 @@
+{
+  "name": "forester-news",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "11.1.8"
+  },
+  "devDependencies": {
+    "@netlify/functions": "6.1.1"
+  }
+}
